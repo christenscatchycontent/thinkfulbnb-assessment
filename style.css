@@ -14,12 +14,6 @@ h3 {
   font-weight: 500;
 }
 
-a,
-a:visited {
-  color: #FFF;
-  text-decoration: none;
-}
-
 p {
   line-height: 1.5em;
   margin: 0;
@@ -35,16 +29,16 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
-/* ---  Groups  --- */
-
+/* Groups & Items */
 .group {
   display: flex;
-  flex-direction: row;
-  display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+.col {
   align-items: center;
 }
 
@@ -57,69 +51,37 @@ main img {
   flex: 2;
 }
 
-.item img {
-  width: 100%;
-}
-
-#about .img-wrapper {
-  flex-basis: 50%;
-  display: flex;
-  flex-direction: row;
-}
-
-#about .img-wrapper img {
-  flex-basis: 50%;
-  margin: 1%;
-}
-
-#about .item {
-  flex-basis: 50%;
-}
-
-#ideas .group {
-  min-height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-#ideas div {
-  display: flex;
-  flex-basis: calc(50% - 40px);
-  justify-content: center;
-  flex-direction: column;
-}
-
-/* -------  Navigation ------- */
+/* Navigation */
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 20px 20px;
   text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 50px;
   color: #fff;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul li {
-  color: #fff;
   list-style-type: none;
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 3px;
 }
 
 header nav ul li a {
-  color: white text-decoration: none;
-  padding: 0 15px 0 0;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 20px 0 0;
+}
+
+header nav ul li:last-child a {
+  margin-right: 20px;
 }
 
 header nav ul li a:hover {
@@ -127,14 +89,10 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
-/* -------  Search Form ------- */
+/* Search Form */
 form {
   border: 2px solid #ff385c;
   padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
 }
 
 form label {
@@ -145,8 +103,6 @@ form select,
 form input {
   margin-bottom: 20px;
   width: 180px;
-  margin: 0;
-  width: 100%;
 }
 
 form button {
@@ -156,20 +112,15 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 50px;
 }
 
-form div {
+.space-between {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  display: flex;
-  flex-direction: column;
 }
 
-/* -------  Footer ------- */
+/* Footer */
 
 footer {
   background-color: #ff385c;
@@ -181,75 +132,71 @@ footer p {
   padding: 20px;
 }
 
-/* -------  Media Query ------- */
-/* -------  Media Query ------- */
-@media all and (max-width: 900px) {
-  header {
-    flex-direction: column;
-  }
+/* Media Query */
 
-  form {
+@media all and (min-width: 480px) {
+  header {
+    /* Changes the default setting from `block` to `flex`. */
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
-  form select,
-  form input {
-    margin: 0;
-    width: 100%;
-  }
-
-  form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  form button {
-    display: flex;
-    justify-content: center;
+  header nav {
     align-items: center;
-    padding: 15px 50px;
+    justify-content: center;
   }
-
-  .group {
-    flex-direction: column;
+  header nav ul li a:hover {
+    color: #bdbdbd;
   }
-
-  #ideas .group {
-    flex-direction: column;
-  }
-
-  form {
-    flex-direction: column;
-  }
-
-  form div {
-    flex-direction: row;
-  }
-
-  label {
-    display: block;
-    width: 200px;
-  }
-
-  #about .img-wrapper {
-    flex-direction: column;
-  }
-
-  #about .img-wrapper img {
-    flex-basis: unset;
-    width: 100%;
-  }
-
-  #about .item {
-    flex-basis: unset;
+  .logo {
+    font-size: 30px;
+    justify-content: center;
   }
 }
 
-@media all and (max-width: 330px) {
-  .logo {
-    font-size: 60px;
+/*Form area */
+
+@media all and (min-width: 1200px) {
+  .vacation-form {
+    display: flex;
+    justify-content: space-between;
+  }
+  .space-between {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/*About section */
+
+@media all and (min-width: 750px) {
+  .col {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .padding {
+    margin: 10px;
+  }
+}
+
+
+@media all and (min-width: 750px) {
+  .picture-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .col2 {
+    flex: 1 0 calc(35% - 20px);
+    margin: 5px;
+  }
+  .padding {
+    margin: 10px;
   }
 }
