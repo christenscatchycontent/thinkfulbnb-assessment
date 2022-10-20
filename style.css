@@ -1,3 +1,5 @@
+/* -------  General Styles ------- */
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -32,26 +34,23 @@ main img {
   width: 100%;
 }
 
-/* Groups & Items */
+/* ---  Groups & Items --- */
+
 .group {
   display: flex;
   flex-direction: column;
 }
 
-.col {
-  align-items: center;
-}
-
 .item {
   flex: 1;
-  margin: 10px;
+  margin:10px;
 }
 
 .item-double {
   flex: 2;
 }
 
-/* Navigation */
+/* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
@@ -89,8 +88,11 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
-/* Search Form */
+/* -------  Search Form ------- */
 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 2px solid #ff385c;
   padding: 10px;
 }
@@ -102,7 +104,7 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  width: 65%;
 }
 
 form button {
@@ -114,13 +116,7 @@ form button {
   width: 100%;
 }
 
-.space-between {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-/* Footer */
+/* -------  Footer ------- */
 
 footer {
   background-color: #ff385c;
@@ -132,71 +128,56 @@ footer p {
   padding: 20px;
 }
 
-/* Media Query */
+/* -------  Media Query ------- */
 
 @media all and (min-width: 480px) {
   header {
-    /* Changes the default setting from `block` to `flex`. */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  header nav {
-    align-items: center;
-    justify-content: center;
-  }
-  header nav ul li a:hover {
-    color: #bdbdbd;
-  }
-  .logo {
-    font-size: 30px;
-    justify-content: center;
-  }
-}
-
-/*Form area */
-
-@media all and (min-width: 1200px) {
-  .vacation-form {
-    display: flex;
-    justify-content: space-between;
-  }
-  .space-between {
-    display: flex;
-    flex-direction: column;
-    margin-right: 40px;
-  }
-  .button-container {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-/*About section */
-
-@media all and (min-width: 750px) {
-  .col {
+    background-color: #ff385c;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
-  .padding {
-    margin: 10px;
+
+  header nav {
+    padding: 10px;
   }
-}
 
+  form {
+    flex-direction: row;
+  }
 
-@media all and (min-width: 750px) {
-  .picture-grid {
+  .group {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
   }
-  .col2 {
-    flex: 1 0 calc(35% - 20px);
-    margin: 5px;
+
+  .vacation-form .item {
+    display: flex block;
+    flex: 1 1 auto;
+    flex-direction: column;
   }
-  .padding {
+
+  .item label
+  , .item input 
+  , .item select 
+  , .item button{
+    display: flex;
+    width: 100%
+  }
+
+  .grid-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column; 
     margin: 10px;
+  }
+
+  .grid-row {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
   }
 }
