@@ -1,7 +1,17 @@
-/* -------  General Styles ------- */
+/* ---  Styles --- */
+
 
 body {
   font-family: "Lato", sans-serif;
+}
+
+p {
+  line-height: 1.5em;
+  margin: 0;
+}
+
+section {
+  padding: 20px;
 }
 
 h2 {
@@ -16,14 +26,6 @@ h3 {
   font-weight: 500;
 }
 
-p {
-  line-height: 1.5em;
-  margin: 0;
-}
-
-section {
-  padding: 20px;
-}
 
 section.alternate-background {
   background-color: #00a699;
@@ -50,7 +52,7 @@ main img {
   flex: 2;
 }
 
-/* -------  Navigation ------- */
+/* ---  Navigation --- */
 
 header {
   background-color: #ff385c;
@@ -88,7 +90,7 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
-/* -------  Search Form ------- */
+/* ---  Search Form --- */
 form {
   display: flex;
   flex-direction: column;
@@ -116,7 +118,7 @@ form button {
   width: 100%;
 }
 
-/* -------  Footer ------- */
+/* ---  Footer --- */
 
 footer {
   background-color: #ff385c;
@@ -128,7 +130,7 @@ footer p {
   padding: 20px;
 }
 
-/* -------  Media Query ------- */
+/* ---  Media Query --- */
 
 @media all and (min-width: 480px) {
   header {
@@ -175,9 +177,11 @@ footer p {
     margin: 10px;
   }
 
+  
   .grid-row {
     display: flex;
     flex: 1;
     flex-direction: row;
   }
+  
 }
