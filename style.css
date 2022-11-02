@@ -26,6 +26,10 @@ h3 {
   font-weight: 500;
 }
 
+.center-text {
+  text-align: center;
+}
+
 
 section.alternate-background {
   background-color: #00a699;
@@ -45,11 +49,11 @@ main img {
 
 .item {
   flex: 1;
-  margin:10px;
 }
 
 .item-double {
   flex: 2;
+  padding: 1%;
 }
 
 /* ---  Navigation --- */
@@ -66,9 +70,11 @@ header {
   color: #fff;
   flex-basis: 30%
 }
+
 header nav {
   flex-basis: 70%;
 }
+
 header nav ul {
   display: flex;
   justify-content: space-around;
@@ -81,11 +87,11 @@ header nav ul li {
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  /* padding: 0 20px 0 0; */ 
+  /* padding: 0 20px 0 0; */
 }
 
 header nav ul li:last-child a {
- /* margin-right: 20px; */
+  /* margin-right: 20px; */
 }
 
 header nav ul li a:hover {
@@ -108,7 +114,7 @@ form label {
 
 form select,
 form input {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 65%;
 }
 
@@ -160,15 +166,15 @@ footer p {
   }
 
   .vacation-form .item {
-    display: flex block;
-    flex: 1 1 auto;
+    display: flex;
+    /* flex: 1 1 auto; */
     flex-direction: column;
+    max-width: 15%;
   }
 
-  .item label
-  , .item input 
-  , .item select 
-  , .item button{
+  .item label,
+  .item input,
+  .item select {
     display: flex;
     width: 100%
   }
@@ -176,16 +182,21 @@ footer p {
   .grid-column {
     display: flex;
     flex: 1;
-    flex-direction: column; 
+    flex-direction: column;
     margin: 10px;
   }
 
-  
+
   .grid-row {
     display: flex;
     flex: 1;
     flex-direction: row;
   }
-  
+
 }
+
+@media all and (max-width: 900px) {
+  form button {
+    font-size: 15px;
+  }
 }
